@@ -22,6 +22,7 @@ mix.styles([
     'resources/assets/admin/css/dataTables.bootstrap.min.css',
     'resources/assets/admin/css/AdminLTE.min.css',
     'resources/assets/admin/css/skin-purple.min.css',
+    'resources/assets/admin/css/select2.min.css',
 ], 'public/css/admin.css').version();
 //
 mix.scripts([
@@ -30,7 +31,8 @@ mix.scripts([
     'resources/assets/admin/js/jquery.dataTables.min.js',
     'resources/assets/admin/js/dataTables.bootstrap.min.js',
     'resources/assets/admin/js/adminlte.min.js',
-    'resources/assets/admin/js/custom.js',
+    'resources/assets/admin/js/select2.full.min.js',
+    'resources/assets/admin/js/custom.js'
 ], 'public/js/admin.js').version();
 //
 mix.copy('resources/assets/admin/fonts', 'public/fonts');
