@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>AdminLTE</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -54,7 +54,7 @@ desired effect
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{route('Admin.dashboard')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
@@ -94,7 +94,7 @@ desired effect
                 <!-- Optionally, you can add icons to the links -->
                 <li><a href="{{route('photos.index')}}"><i class="fa fa-image"></i> <span>Все картинки</span></a></li>
                 <li><a href="{{route('category.index')}}"><i class="fa fa-list"></i> <span>Категории</span></a></li>
-                <li><a href="users/index.html"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
+                <li><a href="{{route('users.index')}}"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

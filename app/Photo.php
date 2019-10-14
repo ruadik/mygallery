@@ -52,6 +52,7 @@ class Photo extends Model
     }
     public function removeImage()
     {
+        if($this->image == null){return;}
         Storage::delete('uploads/'.$this->image);
     }
     public function setImgSize($fileName)
