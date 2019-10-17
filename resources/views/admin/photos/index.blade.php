@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.AdminLayout')
 
 @section('content')
     <div class="content-wrapper">
@@ -48,7 +48,10 @@
                                             <td>{{$photo->id}}</td>
                                             <td>{{$photo->title}}</td>
                                             <td>{{$photo->getCategoryTitle()}}</td>
-                                            <td>{{$photo->user_id}}</td>
+                                            <td>
+                                                <p>{{$photo->User->name}}</p>
+                                                <p>{{$photo->User->email}}</p>
+                                            </td>
                                             <td>
                                                 <img src="{{$photo->getImage()}}" width="200">
                                             </td>

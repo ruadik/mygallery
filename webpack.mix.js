@@ -11,8 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-// mix.js('resources/js/app.js', 'public/js')
-//     .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 
 ///////////Admin///////////
 mix.styles([
@@ -41,3 +41,7 @@ mix.copy('resources/assets/admin/img', 'public/img');
 
 
 ///////////Front///////////
+mix.styles([
+    'resources/assets/front/bulma.css',
+    'resources/assets/front/style.css',
+], 'public/css/front.css').version();

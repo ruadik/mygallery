@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.auth-form {
+	padding: 100px 0px;
+}
+
+time {
+	margin-top: 10px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.account p {
+	font-size: 18px;
+}
+
+.pt-100 {
+	padding-top: 100px;
+}
+
+.alert {
+    background-color: whitesmoke;
+    border-radius: 3px;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    position: relative;
+}
+
+.alert-danger {
+    background-color: #ff3860;
+    color: #fff;
+}
+
+.manager-links a {
+  display: block;
+  margin: 10px;
+  text-align: left;
+}
+
+.my-photo {
+  flex-flow: column-reverse;
+}
+
+.my-photo a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.my-photo .media-left {
+  width: 100%;
+}

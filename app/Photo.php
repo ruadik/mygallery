@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -23,7 +25,7 @@ class Photo extends Model
     public static function add($filds)
     {
         $photo = new self;
-        $photo->user_id=1;
+        $photo->user_id=Auth::user()->id;
         $photo->category_id = $filds['category_id'];
         $photo->fill($filds);
         $photo->save();
@@ -33,7 +35,7 @@ class Photo extends Model
 
     public function edit($filds)
     {
-        $this->user_id = 2;
+        $this->user_id = Auth::user()->id;
         $this->fill($filds);
         $this->save();
     }
@@ -91,4 +93,11 @@ class Photo extends Model
         $this->removeImage();
         $this->delete();
     }
+
+    public function getDateFormatAttribute($date)
+    {
+        $date = Carbon::parse($date);
+        return $date->format('F j');
+    }
+
 }

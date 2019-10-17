@@ -13,6 +13,7 @@ class PhotosController extends Controller
     public function index()
     {
         $photos = Photo::all();
+//        dd($photos);
         return view('admin.photos.index', compact('photos'));
     }
 
@@ -27,7 +28,7 @@ class PhotosController extends Controller
     {
         $request->validate([
             'title'=>'required|unique:photos,title|max:10',
-            'description'=>'required|max:50',
+            'description'=>'required|max:100',
             'category_id'=>'required',
             'image'=>'required|image'
         ]);
@@ -45,7 +46,7 @@ class PhotosController extends Controller
     public function edit($id)
     {
         $photo = Photo::find($id);
-        $categories = Category::all()->pluck('title','id')->except($photo->category_id);
+        $categories = Category::all()->pluck('title','id')->except('id', $photo->category_id);
 
         return view('admin.photos.edit', compact('photo', 'categories'));
     }

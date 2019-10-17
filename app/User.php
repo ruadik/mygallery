@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
@@ -72,6 +73,7 @@ class User extends Authenticatable
         $this->password = Hash::make($password);
         $this->save();
     }
+
 
     public function generateToken($_token)
     {
@@ -170,4 +172,16 @@ class User extends Authenticatable
         $this->removeAvatar();
         $this->delete();
     }
+
+    public function getUserName()
+    {
+        return Auth::user()->name;
+    }
+
+    public function getUserid()
+    {
+        return Auth::user()->id;
+    }
+
+
 }

@@ -95,6 +95,7 @@ desired effect
                 <li><a href="{{route('photos.index')}}"><i class="fa fa-image"></i> <span>Все картинки</span></a></li>
                 <li><a href="{{route('category.index')}}"><i class="fa fa-list"></i> <span>Категории</span></a></li>
                 <li><a href="{{route('users.index')}}"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
+                <li><a href="{{route('Admin.logout')}}"><i class="fa fa-group"></i> <span>Выход</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

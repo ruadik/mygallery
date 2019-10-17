@@ -22,4 +22,11 @@ class Category extends Model
         return $category;
     }
 
+    public function isActive($category_id)
+    {
+        return(request()->path() == 'category/photos/'.$category_id)
+            ? true
+            : false;
+    }
+
 }

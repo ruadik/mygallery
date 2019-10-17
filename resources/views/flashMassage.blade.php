@@ -1,7 +1,7 @@
 @if (session('status'))
     <section class="container">
         <div class="info-box-content">
-            <div class="alert alert-success">
+            <div class="notification is-success">
                 {{ session('status') }}
             </div>
         </div>
