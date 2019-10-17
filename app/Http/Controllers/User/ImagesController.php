@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class ImagesController extends Controller
 {
@@ -26,10 +27,10 @@ class ImagesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required|max:55',
-            'category_id' => 'required',
-            'image' => 'image|required'
+            'title'=>'required|unique:photos,title|max:10',
+            'description'=>'required|max:200',
+            'category_id'=>'required',
+            'image'=>'required|image'
         ]);
 
 
@@ -41,7 +42,10 @@ class ImagesController extends Controller
 
     public function show($id)
     {
-        //
+        $photo = Photo::findOrFail($id);
+        $userPhotos = Photo::where('user_id', $photo->user_id)->limit(4)->get();
+
+        return view('user.PhotosShow', compact('photo', 'userPhotos'));
     }
 
     public function edit($id)
@@ -55,10 +59,14 @@ class ImagesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required|max:55',
-            'image' => 'image'
-        ]);
+                                'title' => [
+                                            'required',
+                                            'max:10',
+                                            Rule::unique('photos')->ignore($id),
+                                            ],
+                                'description' => 'required|max:200',
+                                'image' => 'image|nullable'
+                            ]);
         $photo = Photo::find($id);
         $photo->edit($request->all());
         $photo->setCategory($request->category_id);

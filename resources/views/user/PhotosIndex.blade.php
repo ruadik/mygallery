@@ -23,8 +23,8 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <a href="photo.html">
-                                    <img src="{{$photo->getImage()}}" alt="Placeholder image">
+                                <a href="{{route('images.show',$photo->id)}}">
+                                    <img src="{{$photo->getImgSmall()}}" alt="Placeholder image">
                                 </a>
                             </figure>
                         </div>
@@ -32,18 +32,22 @@
                             <div class="media">
 
                                 <div class="media-left center">
-                                    <p class="title is-5"><a href="category.html">{{$photo->title}}</a></p>
+                                    <p class="title is-5"><a href="{{route('images.show',$photo->id)}}">{{$photo->title}}</a></p>
 
                                     <div class="field is-grouped is-grouped-right">
                                         <p class="control">
-                                            <a href="{{route('images.edit', $photo->id)}}" class="button is-warning">
-                                                <i class="fa fa-edit"></i>
+                                            <a href="{{route('images.edit', $photo->id)}}" class="button is-light">
+                                                <span class="icon has-text-grey-dark">
+                                                  <ion-icon size="large 3em" name="create"></ion-icon>
+                                                </span>
                                             </a>
                                         </p>
                                         <p class="control">
                                             {!! Form::open(['route'=>['images.destroy', $photo->id], 'method'=>'delete']) !!}
-                                            <button class="button is-danger" onclick="return confirm('Вы уверены?');">
-                                                <i class="fa fa-times"></i>
+                                            <button class="button is-light" onclick="return confirm('Вы уверены?');">
+                                                <span class="icon has-text-grey-dark">
+                                                  <ion-icon size="large 3em" name="trash"></ion-icon>
+                                                </span>
                                             </button>
                                             {!! Form::close() !!}
                                         </p>

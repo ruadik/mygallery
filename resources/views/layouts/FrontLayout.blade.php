@@ -23,6 +23,7 @@
 </body>
 
 <script src="{{ mix('/js/admin.js') }}"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 <script src="/plugins/ckeditor/ckeditor.js"></script>
 <script src="/plugins/ckfinder/ckfinder.js"></script>
 <script>

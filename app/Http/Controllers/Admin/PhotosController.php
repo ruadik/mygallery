@@ -13,7 +13,6 @@ class PhotosController extends Controller
     public function index()
     {
         $photos = Photo::all();
-//        dd($photos);
         return view('admin.photos.index', compact('photos'));
     }
 
@@ -28,7 +27,7 @@ class PhotosController extends Controller
     {
         $request->validate([
             'title'=>'required|unique:photos,title|max:10',
-            'description'=>'required|max:100',
+            'description'=>'required|max:200',
             'category_id'=>'required',
             'image'=>'required|image'
         ]);
@@ -56,10 +55,11 @@ class PhotosController extends Controller
         $request->validate([
                                 'title' => [
                                             'required',
+                                            'max:10',
                                             Rule::unique('photos')->ignore($id),
                                             ],
-                                'description' => 'required',
-                                'image' => 'image'
+                                'description' => 'required|max:200',
+                                'image' => 'image|nullable'
                            ]);
 
         $photo = Photo::find($id);

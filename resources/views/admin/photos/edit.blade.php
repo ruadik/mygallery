@@ -61,7 +61,7 @@
                                         <div class="form-group">
                                             <label>Изображение</label>
                                             <input type="file" name="image"> <br>
-                                            <img src="{{$photo->getImage()}}" width="200" alt="">
+                                            <img src="{{$photo->getImgSmall()}}" height="100" width="140">
                                         </div>
 
                                         <div class="form-group">

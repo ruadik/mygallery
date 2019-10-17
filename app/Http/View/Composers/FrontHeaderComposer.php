@@ -4,6 +4,7 @@ namespace App\Http\View\Composers;
 
 use App\Category;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class FrontHeaderComposer
@@ -24,5 +25,6 @@ class FrontHeaderComposer
         $categories = $this->category->all();
 
         $view->with('categories', $categories);
+        $view->with('userName', Auth::user());
     }
 }

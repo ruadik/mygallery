@@ -53,7 +53,7 @@
                                                 <p>{{$photo->User->email}}</p>
                                             </td>
                                             <td>
-                                                <img src="{{$photo->getImage()}}" width="200">
+                                                <img src="{{$photo->getImgSmall()}}" height="80" width="100">
                                             </td>
                                             <td>
 

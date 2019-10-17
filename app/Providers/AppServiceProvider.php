@@ -40,5 +40,9 @@ class AppServiceProvider extends ServiceProvider
             'layouts.__FrontFooter', 'App\Http\View\Composers\FrontFooterComposer'
         );
 
+        View::composer(
+            'layouts.__AdminSidebar', 'App\Http\View\Composers\AdminSidebarComposer'
+        );
+
     }
 }

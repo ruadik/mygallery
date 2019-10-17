@@ -47,8 +47,8 @@ class Photo extends Model
         $fileName = Str::random(10).'.jpg';
         $image->storeAs('/uploads', $fileName);
         $this->setImgSize($fileName);
-        $this->image = $fileName;
-        $this->save();
+        $this->imageSave($fileName);
+        $this->SetImgSmall($fileName);
 
         return $fileName;
     }
@@ -56,6 +56,12 @@ class Photo extends Model
     {
         if($this->image == null){return;}
         Storage::delete('uploads/'.$this->image);
+        Storage::delete('uploads/imgMini/'.$this->image);
+    }
+    public function imageSave($fileName)
+    {
+        $this->image = $fileName;
+        $this->save();
     }
     public function setImgSize($fileName)
     {
@@ -64,6 +70,21 @@ class Photo extends Model
         $size = $this->size=$height.' x '.$width;
 
         return $size;
+    }
+
+    public function SetImgSmall($fileName)
+    {
+        $img = Image::make('uploads/'.$fileName);
+        $img->resize(254, 254);
+
+        $imgSmall_FileName = Str::random(6).'.jpg';
+        $img->save('uploads/'.$imgSmall_FileName);
+        $this->imgSmallSave($imgSmall_FileName);
+    }
+    public function imgSmallSave($imgSmall_FileName)
+    {
+        $this->imgSmall = $imgSmall_FileName;
+        $this->save();
     }
 
     public function getCategoryTitle()
@@ -86,6 +107,13 @@ class Photo extends Model
         return($this->image != null)
         ? '/uploads/'.$this->image
         : '/img/no-image.jpg';
+    }
+
+    public function getImgSmall()
+    {
+        return($this->image != null)
+            ? '/uploads/'.$this->imgSmall
+            : '/img/no-image.jpg';
     }
 
     public function remove()

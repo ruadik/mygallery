@@ -95,7 +95,7 @@
                         <label class="file-label">
                             <div class="form-group">
 
-                                <img src="{{$photo->getImage()}}" width="200" alt="">
+                                <img src="{{$photo->getImgSmall()}}" height="100" width="140" alt="">
                                 <p>
                                     <input type="file" name="image">
                                 </p>

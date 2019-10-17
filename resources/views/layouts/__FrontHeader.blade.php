@@ -61,45 +61,64 @@
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="field is-grouped">
-                                <p class="control">
-                                    <p>
-                                        <a class="navbar-item" href="{{route('images.index')}}">
-                                            Мои картинки
-                                        </a>
-                                    </p>
-                                    <a class="button is-primary" href="{{route('images.create')}}">
-                                      <span class="icon">
-                                        <i class="fas fa-upload"></i>
-                                      </span>
-                                        <span>Загрузить картинку</span>
-                                    </a>
+                                <a class="navbar-item" href="{{route('images.index')}}">
+                                    <span class="icon has-text-grey-dark">
+                                          <ion-icon size="large" name="images"></ion-icon>
+                                    </span>  Мои картинки
+                                </a>
+                                <a class="navbar-item" href="{{route('images.create')}}">
+                                    <span class="icon has-text-grey-dark">
+                                          <ion-icon size="large" name="download"></ion-icon>
+                                    </span>  Загрузить картинку
+                                </a>
 
-                                    </p>
-                                        <div class="account control">
-                                        <p>
-                                        Здравствуйте, <b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b>
-                                    </p>
+                                <div class="navbar-start">
+                                    <div class="navbar-item has-dropdown is-hoverable">
+                                        <a class="navbar-link">
+                                            <figure class="image is-32x32">
+                                                <img class="is-rounded" src="{{$userName->getAvatar()}}">
+                                            </figure>
+                                            <div class="account control">
+                                                <p>
+                                                    <b>{{$userName->name}}</b>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <div class="navbar-dropdown is-boxed">
+                                            <a class="navbar-item" href="{{route('profile.user')}}">
+                                                <span class="icon has-text-grey-dark">
+                                                    <ion-icon size="medium" name="person"></ion-icon>
+                                                </span> Профиль
+                                            </a>
+                                            <a class="navbar-item" href="{{route('security.user')}}">
+                                                <span class="icon has-text-grey-dark">
+                                                  <ion-icon size="medium" name="lock"></ion-icon>
+                                                </span> Безопсность
+                                            </a>
+{{--                                            <a class="navbar-item" href="{{route('profile.user')}}">--}}
+{{--                                                <span class="icon has-text-grey-dark">--}}
+{{--                                                  <ion-icon size="medium" name="person"></ion-icon>--}}
+{{--                                                </span> Профиль--}}
+{{--                                            </a>--}}
+
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="control">
-                                    <a class="button is-info" href="{{route('profile.user')}}">
-                                      <span class="icon">
-                                        <i class="fas fa-user"></i>
-                                      </span>
-                                        <span>Профиль</span>
-                                    </a>
-                                </p>
-                                <p class="control">
-                                    <form  action="{{route('logout')}}" method="Post">
+
+                                <form  action="{{route('logout')}}" method="Post">
                                     @csrf
-                                        <button class="button is-dark">
-                                          <span class="icon">
-                                            <i class="fas fa-window-close"></i>
-                                          </span>
-                                            <span>Выйти</span>
-                                        </button>
-                                    </form>
-                                </p>
+                                    <button class="button">
+                                        <span class="icon has-text-grey-dark">
+                                                  <ion-icon size="large 3em" name="exit"></ion-icon>
+                                        </span>
+{{--                                        <span>--}}
+{{--                                            Выход--}}
+{{--                                        </span>--}}
+                                    </button>
+                                </form>
+
                             </div>
+
                         </div>
                     </div>
                 @endguest

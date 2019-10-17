@@ -71,40 +71,12 @@ desired effect
 
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
 
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="../../assets/admin/img/avatar04.png" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Alexander Pierce</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">Навигация</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li><a href="{{route('photos.index')}}"><i class="fa fa-image"></i> <span>Все картинки</span></a></li>
-                <li><a href="{{route('category.index')}}"><i class="fa fa-list"></i> <span>Категории</span></a></li>
-                <li><a href="{{route('users.index')}}"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
-                <li><a href="{{route('Admin.logout')}}"><i class="fa fa-group"></i> <span>Выход</span></a></li>
-            </ul>
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
-
+    @include('layouts.__AdminSidebar')
         <!-- Main content -->
     @include('errors')
     @include('flashMassage')
+
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
     <!-- /.content-wrapper -->
@@ -202,6 +174,7 @@ desired effect
 
 <!-- jQuery 3 -->
 <script src="{{ mix('/js/admin.js') }}"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 <script src="/plugins/ckeditor/ckeditor.js"></script>
 <script src="/plugins/ckfinder/ckfinder.js"></script>
 <script>
