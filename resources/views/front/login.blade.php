@@ -80,8 +80,8 @@
                     </div>
                 </div>
                 <div class="field">
-                    <p>Забыли пароль? <b><a href="password-reset.html">Восстановление пароля</a></b></p>
-                    <p>Не пришло письмо подтверждения? <b><a href="email-verification.html">Переотправить</a></b></p>
+                    <p>Забыли пароль? <b><a href="{{route('password.request')}}">Восстановление пароля</a></b></p>
+{{--                    <p>Не пришло письмо подтверждения? <b><a href="email-verification.html">Переотправить</a></b></p>--}}
                 </div>
             </div>
             <div class="column"></div>

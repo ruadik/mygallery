@@ -57,7 +57,9 @@
                             </div>
                         </div>
                     </div>
-                @else
+                @endguest
+
+                @if(Auth::check() && Auth::user()->email_verified_at != null)
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="field is-grouped">
@@ -95,11 +97,6 @@
                                                   <ion-icon size="medium" name="lock"></ion-icon>
                                                 </span> Безопсность
                                             </a>
-{{--                                            <a class="navbar-item" href="{{route('profile.user')}}">--}}
-{{--                                                <span class="icon has-text-grey-dark">--}}
-{{--                                                  <ion-icon size="medium" name="person"></ion-icon>--}}
-{{--                                                </span> Профиль--}}
-{{--                                            </a>--}}
 
                                         </div>
                                     </div>
@@ -111,9 +108,6 @@
                                         <span class="icon has-text-grey-dark">
                                                   <ion-icon size="large 3em" name="exit"></ion-icon>
                                         </span>
-{{--                                        <span>--}}
-{{--                                            Выход--}}
-{{--                                        </span>--}}
                                     </button>
                                 </form>
 
@@ -121,7 +115,42 @@
 
                         </div>
                     </div>
-                @endguest
+                @endif
+
+                @if(Auth::check() && Auth::user()->email_verified_at == null)
+                    <div class="navbar-end">
+                    <div class="navbar-item">
+
+                        <form  action="{{route('logout')}}" method="Post">
+                            @csrf
+                            <p class="control">
+                                <button class="button is-info">
+                                      <span class="icon">
+                                        <i class="fas fa-address-book"></i>
+                                      </span>
+                                    <span>Войти</span>
+                                </button>
+                            </p>
+                        </form>
+
+{{--                        <div class="field is-grouped">--}}
+{{--                            <form  action="{{route('logout')}}" method="Post">--}}
+{{--                                @csrf--}}
+{{--                                <p class="control">--}}
+{{--                                    <button class="button is-info">--}}
+{{--                                      <span class="icon">--}}
+{{--                                        <i class="fas fa-address-book"></i>--}}
+{{--                                      </span>--}}
+{{--                                        <span>Регистрация</span>--}}
+{{--                                    </button>--}}
+{{--                                </p>--}}
+{{--                            </form>--}}
+
+                        </div>
+                    </div>
+                </div>
+                @endif
+
             </div>
         </nav>
     </div>
