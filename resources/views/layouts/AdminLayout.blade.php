@@ -75,7 +75,6 @@ desired effect
     @include('layouts.__AdminSidebar')
         <!-- Main content -->
     @include('errors')
-    @include('flashMassage')
 
     <!-- Content Wrapper. Contains page content -->
     @yield('content')

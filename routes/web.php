@@ -17,6 +17,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => 'admin'],
     Route::resource('photos', 'PhotosController');
     Route::resource('category', 'CategoryController');
     Route::resource('users', 'UsersController');
+    Route::get('user/status/unBan/{id}', 'UserStatusController@unBan')->name('user.unBan');
+    Route::get('user/status/ban/{id}', 'UserStatusController@Ban')->name('user.Ban');
 });
 
 Auth::routes(['verify' => true]);
@@ -34,7 +36,13 @@ Route::group(['namespace'=>'Front'], function (){
 });
 
 
-Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'verified'], function (){
+Route::group(['namespace'=>'User', 'middleware'=>'auth'], function (){
+    Route::get('redirect/login', 'RedirectLogoutController@RedirectForLogin')->name('redirect.login');
+    Route::get('redirect/register', 'RedirectLogoutController@RedirectForRegister')->name('redirect.register');
+});
+
+
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['CheckBan', 'verified']], function (){
 //    Route::get('/', 'ImagesController@index')->name('images.index');
     Route::resource('images', 'ImagesController');
     Route::get('/profile', 'ProfileController@edit')->name('profile.user');

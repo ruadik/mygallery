@@ -36,7 +36,7 @@ class UsersController extends Controller
         $user->generatePassword($request->password);
         $user->generateToken($request->_token);
         $user->uploadAvatar($request->file('avatar'));
-        $user->setStatus($request->status);
+        $user->setStatus();
 
         return redirect()->route('users.index')->with('status', 'Пользователь добавлен');
     }
@@ -79,11 +79,11 @@ class UsersController extends Controller
         return redirect()->route('users.index')->with('status', 'Данные пользователя обновлены');
     }
 
-    public function destroy($id)
-    {
-        $user = User::find($id);
-        $user->remove();
-
-        return redirect()->route('users.index')->with('status', 'Пользователь удален');
-    }
+//    public function destroy($id)
+//    {
+//        $user = User::find($id);
+//        $user->remove();
+//
+//        return redirect()->route('users.index')->with('status', 'Пользователь удален');
+//    }
 }

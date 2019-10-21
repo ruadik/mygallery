@@ -26,5 +26,6 @@ class FrontHeaderComposer
 
         $view->with('categories', $categories);
         $view->with('userName', Auth::user());
+
     }
 }

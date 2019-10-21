@@ -3,7 +3,7 @@
         <nav class="navbar is-transparent">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{route('FrontHome')}}">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                    <img src="/img/logo.png">
                 </a>
                 <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
                     <span></span>
@@ -121,17 +121,43 @@
                     <div class="navbar-end">
                     <div class="navbar-item">
 
-                        <form  action="{{route('logout')}}" method="Post">
-                            @csrf
-                            <p class="control">
-                                <button class="button is-info">
+
+
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="field is-grouped">
+                                    <p class="control">
+                                        <a class="button is-link" href="{{route('redirect.login')}}">
+                                      <span class="icon">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                            <span>Войти</span>
+                                        </a>
+                                    </p>
+                                    <p class="control">
+                                        <a class="button is-primary" href="{{route('redirect.login')}}">
                                       <span class="icon">
                                         <i class="fas fa-address-book"></i>
                                       </span>
-                                    <span>Войти</span>
-                                </button>
-                            </p>
-                        </form>
+                                            <span>Зарегистрироваться</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+{{--                            <form  action="{{route('logout')}}" method="Post">--}}
+{{--                            @csrf--}}
+{{--                            <p class="control">--}}
+{{--                                <button class="button is-info">--}}
+{{--                                      <span class="icon">--}}
+{{--                                        <i class="fas fa-address-book"></i>--}}
+{{--                                      </span>--}}
+{{--                                    <span>Войти</span>--}}
+{{--                                </button>--}}
+{{--                            </p>--}}
+{{--                        </form>--}}
 
 {{--                        <div class="field is-grouped">--}}
 {{--                            <form  action="{{route('logout')}}" method="Post">--}}
@@ -146,7 +172,7 @@
 {{--                                </p>--}}
 {{--                            </form>--}}
 
-                        </div>
+{{--                        </div>--}}
                     </div>
                 </div>
                 @endif

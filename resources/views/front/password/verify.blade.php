@@ -21,16 +21,16 @@
             <div class="card-body">
                 @if (session('resent'))
                     <div class="notification is-primary" role="alert">
-                        {{ __('Ссылка на подтверждение E-mail отправлена, проверьте почту.') }}
+                        <strong>{{ __('Ссылка на подтверждение E-mail отправлена, проверьте почту.') }}</strong>
+                    </div>
+                @else
+                    <div class="notification is-primary" role="alert">
+                        <strong>{{ __('Проверьте почту.') }}</strong>
                     </div>
                 @endif
-
-                {{ __('Перед отправкой проверьте почту.') }}
-                    <br>
-                {{ __('Если вы не получили письмо') }},
+                {{ __('Если вы не получили письмо для повторной отправки') }},
                 <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                     @csrf
-{{--                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Если вы не получили письмо, нажмите на кнопку') }}</button>--}}
                     <p class="control">
                         <button class="button is-info">
                                       <span class="icon">

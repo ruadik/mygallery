@@ -1,3 +1,5 @@
+{{--{{session('status')}}--}}
+
 @if (session('status'))
     <section class="container">
         <div class="info-box-content">

@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Lang;
 
 class ResetPassword extends Notification
 {
@@ -43,11 +44,11 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Изменение пароля')
-            ->line('Вы получили это письмо, потому что мы получили запрос на сброс пароля для вашей учетной записи.')
-            ->action('Сбросить пароль', url(config('app.url').route('password.reset', $this->token, false)
-                        .'?email='.urlencode($notifiable->email)))
-            ->line('Если вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.');
+                ->subject(Lang::get('Изменение пароля'))
+                ->line(Lang::get('Вы запросили сброс пароля от Вашей учетной записи.'))
+                ->action(Lang::get('Сбросить пароль'), url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
+                ->line(Lang::get('Эта ссылка для сброса пароля бедет не действительна через :count минут.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+                ->line(Lang::get('Если вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.'));
     }
 
     /**

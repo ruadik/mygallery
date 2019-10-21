@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 
 use App\Notifications\ResetPassword as ResetPasswordNotification;
+use App\Notifications\VerificationEmail as VerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -24,6 +25,15 @@ class User extends Authenticatable implements MustVerifyEmail
         // Your your own implementation.
         $this->notify(new ResetPasswordNotification($token));
     }
+
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail);
+    }
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -99,9 +109,9 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->status = 0;
         $this->save();
     }
-    public function setStatus($status)
+    public function setStatus()
     {
-        return($status == null)
+        return($this->status == 1)
         ? $this->unBun()
         : $this->Bun();
     }
@@ -190,6 +200,5 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return Auth::user()->id;
     }
-
 
 }

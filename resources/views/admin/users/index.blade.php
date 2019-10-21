@@ -1,10 +1,13 @@
 @extends('layouts.AdminLayout')
 
 @section('content')
+
     <div class="content-wrapper">
 
         <!-- Main content -->
         <section class="content container-fluid">
+
+        @include('flashAdminMassage')
 
             <!-- Main content -->
             <section class="content">
@@ -57,11 +60,11 @@
 
                                         @if($user->status == 0)
                                             <td>
-                                                <span class="btn btn-success">{{$user->getStatus()}}</span>
+                                               <a href="{{route('user.Ban',$user->id)}}"> <span class="btn btn-success">{{$user->getStatus()}}</span></a>
                                             </td>
                                         @else
                                             <td>
-                                                <span class="btn btn-danger">{{$user->getStatus()}}</span>
+                                                <a href="{{route('user.unBan',$user->id)}}"> <span class="btn btn-danger">{{$user->getStatus()}}</span></a>
                                             </td>
                                         @endif
 
@@ -71,11 +74,11 @@
                                                 <i class="fa fa-pencil"></i>
                                             </a>
 
-                                            {!! Form::open(['route'=>['users.destroy', $user->id], 'method'=>'delete']) !!}
-                                                <button class="btn btn-danger" onclick="return confirm('Вы уверены?');">
-                                                    <i class="fa fa-remove"></i>
-                                                </button>
-                                            {!! Form::close() !!}
+{{--                                            {!! Form::open(['route'=>['users.destroy', $user->id], 'method'=>'delete']) !!}--}}
+{{--                                                <button class="btn btn-danger" onclick="return confirm('Вы уверены?');">--}}
+{{--                                                    <i class="fa fa-remove"></i>--}}
+{{--                                                </button>--}}
+{{--                                            {!! Form::close() !!}--}}
 
                                         </td>
                                     </tr>

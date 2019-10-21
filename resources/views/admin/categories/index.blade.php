@@ -7,6 +7,7 @@
         <!-- Main content -->
         <section class="content container-fluid">
 
+        @include('flashAdminMassage')
             <!-- Main content -->
             <section class="content">
 

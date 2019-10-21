@@ -44,5 +44,9 @@ class AppServiceProvider extends ServiceProvider
             'layouts.__AdminSidebar', 'App\Http\View\Composers\AdminSidebarComposer'
         );
 
+        Paginator::defaultView('/vendor/pagination/default');
+
+        Paginator::defaultSimpleView('/vendor/pagination/simple-default');
+
     }
 }
