@@ -59,7 +59,8 @@
                     </div>
                 @endguest
 
-                @if(Auth::check() && Auth::user()->email_verified_at != null)
+{{--                @if(Auth::check() && Auth::user()->email_verified_at != null)--}}
+                @if(Auth::check())
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="field is-grouped">
@@ -117,35 +118,35 @@
                     </div>
                 @endif
 
-                @if(Auth::check() && Auth::user()->email_verified_at == null)
-                    <div class="navbar-end">
-                    <div class="navbar-item">
+{{--                @if(Auth::check() && Auth::user()->email_verified_at == null)--}}
+{{--                    <div class="navbar-end">--}}
+{{--                    <div class="navbar-item">--}}
 
 
 
 
-                        <div class="navbar-end">
-                            <div class="navbar-item">
-                                <div class="field is-grouped">
-                                    <p class="control">
-                                        <a class="button is-link" href="{{route('redirect.login')}}">
-                                      <span class="icon">
-                                        <i class="fas fa-user"></i>
-                                      </span>
-                                            <span>Войти</span>
-                                        </a>
-                                    </p>
-                                    <p class="control">
-                                        <a class="button is-primary" href="{{route('redirect.login')}}">
-                                      <span class="icon">
-                                        <i class="fas fa-address-book"></i>
-                                      </span>
-                                            <span>Зарегистрироваться</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="navbar-end">--}}
+{{--                            <div class="navbar-item">--}}
+{{--                                <div class="field is-grouped">--}}
+{{--                                    <p class="control">--}}
+{{--                                        <a class="button is-link" href="{{route('redirect.login')}}">--}}
+{{--                                      <span class="icon">--}}
+{{--                                        <i class="fas fa-user"></i>--}}
+{{--                                      </span>--}}
+{{--                                            <span>Войти</span>--}}
+{{--                                        </a>--}}
+{{--                                    </p>--}}
+{{--                                    <p class="control">--}}
+{{--                                        <a class="button is-primary" href="{{route('redirect.login')}}">--}}
+{{--                                      <span class="icon">--}}
+{{--                                        <i class="fas fa-address-book"></i>--}}
+{{--                                      </span>--}}
+{{--                                            <span>Зарегистрироваться</span>--}}
+{{--                                        </a>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
 {{--                            <form  action="{{route('logout')}}" method="Post">--}}
 {{--                            @csrf--}}
@@ -173,9 +174,9 @@
 {{--                            </form>--}}
 
 {{--                        </div>--}}
-                    </div>
-                </div>
-                @endif
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                @endif--}}
 
             </div>
         </nav>

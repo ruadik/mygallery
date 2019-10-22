@@ -42,7 +42,8 @@ Route::group(['namespace'=>'User', 'middleware'=>'auth'], function (){
 });
 
 
-Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['CheckBan', 'verified']], function (){
+//Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['CheckBan', 'verified']], function (){
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'CheckBan'], function (){
 //    Route::get('/', 'ImagesController@index')->name('images.index');
     Route::resource('images', 'ImagesController');
     Route::get('/profile', 'ProfileController@edit')->name('profile.user');
