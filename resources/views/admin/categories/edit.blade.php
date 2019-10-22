@@ -39,7 +39,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button class="btn btn-warning">Изменить</button>
+                                            <button class="btn btn-warning">Обновить</button>
                                         </div>
                                     {!! Form::close() !!}
 

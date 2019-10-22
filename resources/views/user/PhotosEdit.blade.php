@@ -117,7 +117,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-success is-large">Загрузить</button>
+                        <button class="button is-success is-large">Обновить</button>
                     </div>
                 </div>
             </div>

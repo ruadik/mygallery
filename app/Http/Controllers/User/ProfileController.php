@@ -13,7 +13,7 @@ class ProfileController extends Controller
     {
         $user = User::find(Auth::user()->id);
 
-        return view('user.profile-info', compact('user'));
+        return view('user.Profile-info', compact('user'));
     }
 
     public function update(Request $request, $id)
