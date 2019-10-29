@@ -15,5 +15,6 @@ $factory->define(Photo::class, function (Faker $faker) {
         'description' => $faker->unique()->sentence($nbWords = 26, $variableNbWords = true),
         'size' => '1080 x 1920',
         'imgSmall' => $faker->unique()->numberBetween(1001, 1014).'.jpg',
+        'slug' => $faker->unique()->word,
     ];
 });

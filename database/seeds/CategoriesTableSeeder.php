@@ -17,6 +17,10 @@ class CategoriesTableSeeder extends Seeder
             ['title' => 'Игры'],
             ['title' => 'HiTech'],
             ['title' => 'Рисунки'],
+            ['slug' => 'Priroda'],
+            ['slug' => 'igri'],
+            ['slug' => 'HiTech'],
+            ['slug' => 'risunki'],
         ]);
     }
 }
