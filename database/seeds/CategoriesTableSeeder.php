@@ -13,14 +13,16 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            ['title' => 'Природа'],
-            ['title' => 'Игры'],
-            ['title' => 'HiTech'],
-            ['title' => 'Рисунки'],
-            ['slug' => 'Priroda'],
-            ['slug' => 'igri'],
-            ['slug' => 'HiTech'],
-            ['slug' => 'risunki'],
-        ]);
+                                                    ['title' => 'Природа'],
+                                                    ['title' => 'Игры'],
+                                                    ['title' => 'HiTech'],
+                                              ],
+                                              [
+                                                    ['title' => 'Рисунки'],
+                                                    ['slug' => 'Priroda'],
+                                                    ['slug' => 'igri'],
+                                                    ['slug' => 'HiTech'],
+                                                    ['slug' => 'risunki'],
+                                               ]);
     }
 }
