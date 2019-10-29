@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Photo;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FrontHomeController extends Controller
 {
@@ -39,5 +40,13 @@ class FrontHomeController extends Controller
         $User = User::where('id', $id)->pluck('name');
 
         return view('front.UserPhotos', compact('photosUser', 'User'));
+    }
+
+    public function download($id)
+    {
+        $photo = Photo::find($id);
+        $path = 'uploads/'.$photo->image;
+        return Storage::download($path);
+//        return
     }
 }

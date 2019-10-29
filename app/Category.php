@@ -2,15 +2,27 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'slug'];
 
     public function Photos()
     {
         return $this->hasMany(Photo::class);
+    }
+
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 
 

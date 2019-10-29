@@ -50,7 +50,7 @@
 
                                             <div class="btn-group" role="group" aria-label="Basic example">
 
-                                                <a href="{{route('category.edit', $category->id)}}" class="btn btn-warning">
+                                                <a href="{{route('category.edit', $category->slug)}}" class="btn btn-warning">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
 

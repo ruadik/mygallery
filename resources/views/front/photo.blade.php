@@ -41,7 +41,7 @@
                             {!!$photo->description!!}
                             <br>
                             <time datetime="2016-1-1" class="is-size-6 is-pulled-left">Добавлено: {{$photo->getDateFormatAttribute($photo->created_at)}}</time>
-                            <a href="#" class="button is-info is-pulled-right">Скачать</a>
+                            <a href="{{route('front.download.photo', $photo->id)}}" class="button is-info is-pulled-right">Скачать</a>
                             <div class="is-clearfix"></div>
                         </div>
                     </div>
