@@ -20,7 +20,11 @@ class Category extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source'             => 'title',
+                'separator'          => '-',
+                'unique'             => true,
+                'onUpdate'           => true,
+
             ]
         ];
     }

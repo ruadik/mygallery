@@ -66,7 +66,7 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
-                            <a href="{{route('front.photo', $userPhoto->id)}}">
+                            <a href="{{route('front.photo', $userPhoto->slug)}}">
                                 <img src="{{$userPhoto->getImgSmall()}}" alt="Placeholder image">
                             </a>
                         </figure>

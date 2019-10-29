@@ -5,7 +5,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    {{$category[0]}}
+                    {{$category->title}}
                 </h1>
                 <h2 class="subtitle">
                     Картинки по категориям
@@ -22,7 +22,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <a href="{{route('front.photo', $photo->id)}}">
+                                <a href="{{route('front.photo', $photo->slug)}}">
                                     <img src="{{$photo->getImgSmall()}}" alt="Placeholder image">
                                 </a>
                             </figure>

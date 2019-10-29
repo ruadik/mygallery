@@ -32,7 +32,7 @@ Route::group(['namespace'=>'Front'], function (){
     Route::get('/', 'FrontHomeController@index')->name('FrontHome');
     Route::get('/photo/{id}', 'FrontHomeController@show')->name('front.photo');
     Route::get('/download/{id}', 'FrontHomeController@download')->name('front.download.photo');
-    Route::get('/photos/category/{category}', 'FrontHomeController@categoryPhotos')->name('front.category.photos');
+    Route::get('/photos/category/{slug}', 'FrontHomeController@categoryPhotos')->name('front.category.photos');
     Route::get('/photos/user/{id}', 'FrontHomeController@userPhotos')->name('front.user.photos');
 });
 

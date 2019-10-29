@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
@@ -20,6 +21,20 @@ class Photo extends Model
     public function Category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source'        => 'title',
+                'separator'     => '-',
+                'unique'        => true,
+                'onUpdate'      => true,
+            ]
+        ];
     }
 
     public static function add($filds)

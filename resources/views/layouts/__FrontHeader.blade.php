@@ -23,7 +23,7 @@
                         </a>
                         <div class="navbar-dropdown is-boxed">
                             @foreach($categories as $category)
-                            <a class="navbar-item" href="{{route('front.category.photos', $category->id)}}">
+                            <a class="navbar-item" href="{{route('front.category.photos', $category->slug)}}">
                                 {{$category->title}}
                             </a>
                             @endforeach

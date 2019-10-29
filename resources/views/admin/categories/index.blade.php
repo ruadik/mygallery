@@ -54,7 +54,7 @@
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
 
-                                                {!! Form::open(['route'=>['category.destroy',$category->id], 'method'=>'DELETE']) !!}
+                                                {!! Form::open(['route'=>['category.destroy',$category->slug], 'method'=>'DELETE']) !!}
                                                     <button class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                                                         <i class="fa fa-remove"></i>
                                                     </button>

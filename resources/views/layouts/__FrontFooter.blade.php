@@ -3,9 +3,9 @@
         <ul>
             @foreach($categories as $category)
                 @if($category->isActive($category->id) == true)
-                    <li class="is-active"><a href="{{route('front.category.photos', $category->id)}}">{{$category->title}}</a></li>
+                    <li class="is-active"><a href="{{route('front.category.photos', $category->slug)}}">{{$category->title}}</a></li>
                 @else
-                    <li><a href="{{route('front.category.photos', $category->id)}}">{{$category->title}}</a></li>
+                    <li><a href="{{route('front.category.photos', $category->slug)}}">{{$category->title}}</a></li>
                 @endif
             @endforeach
         </ul>

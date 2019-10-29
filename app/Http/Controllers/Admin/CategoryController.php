@@ -28,9 +28,9 @@ class CategoryController extends Controller
         return redirect()->route('category.index')->with('status', 'Категоря создана!');
     }
 
-    public function edit($id)
+    public function edit($slug)
     {
-        $category = Category::find($id);
+        $category = Category::where('slug', $slug)->firstOrFail();
 
         return view('admin.categories.edit', compact('category'));
     }

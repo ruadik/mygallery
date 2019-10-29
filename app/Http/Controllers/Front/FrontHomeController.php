@@ -18,18 +18,18 @@ class FrontHomeController extends Controller
         return view('front.dashboard', compact('photos'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $photo = Photo::findOrFail($id);
+        $photo = Photo::where('slug', $slug)->firstOrFail();
         $userPhotos = Photo::where('user_id', $photo->user_id)->limit(4)->get();
 
         return view('front.photo', compact('photo', 'userPhotos'));
     }
 
-    public function categoryPhotos($catgory_id)
+    public function categoryPhotos($slug)
     {
-        $photosCategory = Photo::where('category_id', $catgory_id)->paginate(8);
-        $category = Category::where('id', $catgory_id)->pluck('title');
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $photosCategory = Photo::where('category_id', $category->id)->paginate(8);
 
         return view('front.CategoryPhotos', compact('photosCategory', 'category'));
     }
