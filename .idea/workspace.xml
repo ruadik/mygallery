@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="776fd802-d54c-46e6-b909-8877120d6a43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/avatars/MMsFaNjuYr.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/6ubCrw6K6M.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/FgyzO8.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/GdvWPQ.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/S4iyw0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -351,12 +348,12 @@
       <workItem from="1572244269093" duration="11818000" />
       <workItem from="1572352122370" duration="2161000" />
       <workItem from="1572355559979" duration="18043000" />
-      <workItem from="1572436620883" duration="1368000" />
+      <workItem from="1572436620883" duration="2250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390453000" />
+    <option name="totallyTimeSpent" value="391335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,13 +365,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="840" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="840" extended-state="7" />
     <layout>
       <window_info id="npm" order="0" show_stripe_button="false" sideWeight="0.5010941" side_tool="true" weight="0.18322147" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4962963" visible="true" weight="0.20671141" />
       <window_info id="Structure" order="2" sideWeight="0.5037037" side_tool="true" weight="0.20604026" />
       <window_info id="Favorites" order="3" sideWeight="0.5037037" side_tool="true" weight="0.20604026" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49597314" visible="true" weight="0.33577713" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49597314" visible="true" weight="0.40469208" />
       <window_info anchor="bottom" id="TypeScript" order="1" weight="0.32991204" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32991204" />
