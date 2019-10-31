@@ -74,10 +74,10 @@
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
-                                <p class="title is-5"><a href="{{route('front.photo', $userPhoto->id)}}">{{$userPhoto->title}}</a></p>
+                                <p class="title is-5"><a href="{{route('front.photo', $userPhoto->slug)}}">{{$userPhoto->title}}</a></p>
                             </div>
                             <div class="media-right">
-                                <p  class="is-size-7 media-right">Категория: <a href="{{route('front.category.photos', $userPhoto->category_id)}}">{{$userPhoto->getCategoryTitle()}}</a></p>
+                                <p  class="is-size-7 media-right">Категория: <a href="{{route('front.category.photos', $userPhoto->getCategoryslug())}}">{{$userPhoto->getCategoryTitle()}}</a></p>
                                 <p  class="is-size-7 media-right">Размер: {{$userPhoto->size}}</p>
                                 <p  class="is-size-7 media-right">Добавлено: {{$userPhoto->getDateFormatAttribute($photo->created_at)}}</p>
                             </div>

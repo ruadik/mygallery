@@ -30,7 +30,7 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <p class="title is-5"><a href="{{route('front.photo', $photo->id)}}">{{$photo->title}}</a></p>
+                                    <p class="title is-5"><a href="{{route('front.photo', $photo->slug)}}">{{$photo->title}}</a></p>
                                 </div>
                                 <div class="media-right">
                                     <p  class="is-size-7 media-right">Автор: <a href="{{route('front.user.photos',$photo->user_id)}}">{{$photo->user->name}}</a></p>
