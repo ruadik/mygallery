@@ -28,6 +28,10 @@ class CategoriesTableSeeder extends Seeder
                                                     [
                                                         'title' => 'Рисунки',
                                                         'slug' => 'risunki',
+                                                    ],
+                                                    [
+                                                        'title' => 'Города',
+                                                        'slug' => 'goroda',
                                                     ]
                                                ]);
     }

@@ -109,6 +109,13 @@ class Photo extends Model
         : 'Нет категории';
     }
 
+    public function getCategorySlug()
+    {
+        return($this->Category != null)
+            ? $this->Category->slug
+            : 'Нет категории';
+    }
+
     public function setCategory($category)
     {
         if($category != null) {

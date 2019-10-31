@@ -29,11 +29,11 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <p class="title is-5"><a href="{{route('front.photo',$photo->id)}}">{{$photo->title}}</a></p>
+                                    <p class="title is-5"><a href="{{route('front.photo',$photo->slug)}}">{{$photo->title}}</a></p>
                                 </div>
                                 <div class="media-right">
                                     <p  class="is-size-7 media-right">Автор: <a href="{{route('front.user.photos',$photo->user_id)}}">{{$photo->user->name}}</a></p>
-                                    <p  class="is-size-7 media-right">Категория: <a href="{{route('front.category.photos',$photo->category_id)}}">{{$photo->getCategoryTitle()}}</a></p>
+                                    <p  class="is-size-7 media-right">Категория: <a href="{{route('front.category.photos',$photo->getCategorySlug())}}">{{$photo->getCategoryTitle()}}</a></p>
                                     <p  class="is-size-7 media-right">Размер: {{$photo->size}}</p>
                                     <p  class="is-size-7 media-right">Добавлено: {{$photo->getDateFormatAttribute($photo->created_at)}}</p>
                                 </div>
