@@ -13,7 +13,7 @@ class FrontHomeController extends Controller
 {
     public function index()
     {
-        $photos = Photo::paginate(12);
+        $photos = Photo::paginate(8);
 
         return view('front.dashboard', compact('photos'));
     }
